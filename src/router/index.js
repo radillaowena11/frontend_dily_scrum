@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Input_Daily_Scrum from '../views/Input_Daily_Scrum.vue'
+import Navbar from '../views/Navbar.vue'
 
 Vue.use(VueRouter)
 
@@ -21,12 +22,12 @@ const routes = [
   {
     path: '/input_daily_scrum',
     name: 'Input_Daily_Scrum',
-    components: {default: Input_Daily_Scrum}
+    components: {default: Input_Daily_Scrum, header : Navbar}
   },
   {
     path: '/',
     name: 'Home',
-    component: Login
+    component: Register
   },
   // {
   //   path: '/about',
@@ -44,17 +45,17 @@ const router = new VueRouter({
   routes: routes
 })
 
-router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requiresAuth)) {
-    if (store.getters.isLoggedIn) {
-      next()
-      return
-    }
-    next('/login') 
-  } else {
-    next() 
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   if(to.matched.some(record => record.meta.requiresAuth)) {
+//     if (store.getters.isLoggedIn) {
+//       next()
+//       return
+//     }
+//     next('/login') 
+//   } else {
+//     next() 
+//   }
+// })
 
 export default router
 

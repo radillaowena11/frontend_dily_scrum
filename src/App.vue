@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
+    <div class="container-scroller">
+      <roter-view name="header" />
     <router-view/>
   </div>
+  </div>
 </template>
+
+<script>
+  import Navbar from './views/Navbar'
+  export default {
+    name: 'App',
+    components: {
+      Navbar
+    },
+    data : function(){
+      return {
+        status_login: ''
+      }
+    } 
+  }
+</script>
+
 
 <style>
 #app {

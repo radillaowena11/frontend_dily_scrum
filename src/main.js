@@ -9,16 +9,12 @@ import App from './App.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-// import '../public/assets/css/'
-// import '../public/assets/fonts/'
-// import '../public/assets/js/'
-// import '../public/assets/img/'
 
 Vue.use(BootstrapVue)
 Vue.use(VueCookies)
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
-axios.defaults.baseURL = 'http://127.0.0.1:8000/api' //ip laravelnya ganti krn yg 8000 sudah dipakai VUE UI
+axios.defaults.baseURL = 'http://localhost/api_daily_scrum_Radilla_Nathaniel_Owena/public/api' //ip laravelnya ganti krn yg 8000 sudah dipakai VUE UI
 const token = localStorage.getItem('Authorization')
 if (token) {
   Vue.prototype.$http.defaults.headers.common['Authorization'] = token
